@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orações Marianas - Evento Religioso</title>
+  <meta name="description"
+    content="Acompanhe as orações do nosso evento religioso: Ofício de Nossa Senhora e Ladainha de Nossa Senhora">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Decorative Elements -->
+  <div class="bg-pattern"></div>
+  <div class="light-rays"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="cross-icon">✝</div>
+      <h1>Manhã Marianas</h1>
+      <p class="subtitle">Orações</p>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="bottom-nav-item active" data-section="oficio">
+      <div class="nav-icon">
+        <!-- Ícone: livro (Ofício) -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M4 5.5c0-1.1.9-2 2-2h5c1.7 0 3 1.3 3 3v14c0-1.7-1.3-3-3-3H6c-1.1 0-2 .9-2 2V5.5z" />
+          <path d="M20 5.5c0-1.1-.9-2-2-2h-5c-1.7 0-3 1.3-3 3v14c0-1.7 1.3-3 3-3h5c1.1 0 2 .9 2 2V5.5z" />
+          <path d="M12 7.5h4" />
+        </svg>
+      </div>
+      <span class="nav-label">Ofício</span>
+      <div class="nav-indicator"></div>
+    </button>
+    <button class="bottom-nav-item" data-section="ladainha">
+      <div class="nav-icon">
+        <!-- Ícone: lista (Ladainha) -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M8 6h12" />
+          <path d="M8 12h12" />
+          <path d="M8 18h12" />
+          <path d="M4 6h.01" />
+          <path d="M4 12h.01" />
+          <path d="M4 18h.01" />
+        </svg>
+      </div>
+      <span class="nav-label">Ladainha</span>
+      <div class="nav-indicator"></div>
+    </button>
+    <button class="bottom-nav-item" data-section="whatsapp">
+      <div class="nav-icon whatsapp-nav-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </div>
+      <span class="nav-label">Grupo</span>
+      <div class="nav-indicator"></div>
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Ofício de Nossa Senhora -->
+    <section id="oficio" class="prayer-section active">
+      <div class="section-header">
+        <div class="ornament">❧</div>
+        <h2>Ofício de Nossa Senhora</h2>
+        <div class="ornament flipped">❧</div>
+      </div>
+
+      <!-- Invocação -->
+      <article class="prayer-card">
+        <h3 class="prayer-title">Invocação</h3>
+        <div class="prayer-text">
+          <p class="emphasis">Deus vos salve Virgem, Filha de Deus Pai!</p>
+          <p class="emphasis">Deus vos salve Virgem, Mãe de Deus Filho!</p>
+          <p class="emphasis">Deus vos salve Virgem, Esposa do Divino Espírito Santo!</p>
+          <p class="emphasis">Deus vos salve Virgem, Templo e Sacrário da Santíssima Trindade!</p>
+        </div>
+      </article>
+
+      <!-- Prima -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕕</span>
+          <span class="hora-time">5:00</span>
+        </div>
+        <h3 class="prayer-title">Laudes</h3>
+        <div class="prayer-text">
+          <p class="versicle">
+            Agora, lábios meus, dizei e anunciai os grandes louvores da Virgem Mãe de Deus.
+            Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.
+          </p>
+
+          <div data-include="gloria"></div>
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus vos salve, Virgem</p>
+            <p>Senhora do mundo</p>
+            <p>Rainha dos céus</p>
+            <p>e das virgens, Virgem</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Estrela da manhã</p>
+            <p>Deus vos salve, cheia</p>
+            <p>de graça divina</p>
+            <p>formosa e louçã.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Dai pressa Senhora</p>
+            <p>em favor do mundo</p>
+            <p>pois vos reconhece</p>
+            <p>como defensora.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Deus vos nomeou</p>
+            <p>desde a eternidade</p>
+            <p>para a Mãe do Verbo</p>
+            <p>com o qual criou</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Terra, mar e céus.</p>
+            <p>E vos escolheu</p>
+            <p>quando Adão pecou</p>
+            <p>por esposa de Deus.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Deus a escolheu</p>
+            <p>e já muito antes</p>
+            <p>em seu tabernáculo</p>
+            <p>morada lhe deu.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Ouvi, Mãe de Deus</p>
+            <p>minha Oração.</p>
+            <p>Toquem vosso peito</p>
+            <p>os clamores meus.</p>
+          </div>
+
+          <div data-include="oracao"></div>
+        </div>
+      </article>
+
+
+
+
+
+      <!-- Prima -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕕</span>
+          <span class="hora-time">6:00</span>
+        </div>
+        <h3 class="prayer-title">Prima</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+
+          <div data-include="gloria"></div>
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus vos salve, mesa</p>
+            <p>para Deus ornada, coluna sagrada</p>
+            <p>de grande firmeza;</p>
+          </div>  
+
+          <div class="estrofe">
+            <p>casa dedicada</p>
+            <p>a Deus sempiterno</p>
+            <p>sempre preservada</p>
+            <p>Virgem do pecado.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Antes que nascida</p>
+            <p>Fostes, Virgem santa</p>
+            <p>no ventre ditoso</p>
+            <p>de Ana concebida.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Sois Mãe criadora</p>
+            <p>dos mortais viventes.</p>
+            <p>Sois dos Santos porta;</p>
+            <p>dos Anjos, Senhora.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Sois forte esquadrão</p>
+            <p>contra o inimigo</p>
+            <p>estrela de Jacó</p>
+            <p>refúgio do cristão.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>A Virgem, a criou</p>
+            <p>Deus no Espírito Santo</p>
+            <p>e todas as suas obras</p>
+            <p>com elas as ornou.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Ouvi, Mãe de Deus</p>
+            <p>minha Oração.</p>
+            <p>Toque em Vosso peito</p>
+            <p>os clamores meus.</p>
+          </div>  
+
+          <div data-include="oracao"></div>
+
+        </div>
+      </article>
+
+      <!-- Terça -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕘</span>
+          <span class="hora-time">9:00</span>
+        </div>
+        <h3 class="prayer-title">Terça</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+
+          <div data-include="gloria"></div>
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus Vos salve, trono</p> 
+            <p>do grão Salomão</p>
+            <p>arca de concerto</p>
+            <p>velo de Gedeão</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Íris do céu clara</p>
+            <p>sarça de visão</p>
+            <p>favo de Sansão</p>
+            <p>florescente vara</p>
+          </div>
+
+          <div class="estrofe">
+            <p>a qual escolheu</p>
+            <p>para ser Mãe sua</p>
+            <p>e de Vós nasceu</p>
+            <p>o Filho de Deus.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Assim Vos livrou</p>
+            <p>da culpa original</p>
+            <p>De nenhum pecado</p>
+            <p>há em Vós sinal.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Vós, que habitais</p>
+            <p>lá nessas alturas</p>
+            <p>e tendes Vosso Trono</p>
+            <p>sobre as nuvens puras</p>
+          </div>
+
+          <div class="estrofe">
+              <p>Ouvi, Mãe de Deus</p>
+              <p>minha Oração.</p>
+              <p>Toque em Vosso peito</p>
+              <p>os clamores meus.</p>
+          </div>
+
+          <div data-include="oracao"></div>
+
+        </div>
+      </article>
+
+
+
+      <!-- Sexta -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕛</span>
+          <span class="hora-time">12:00</span>
+        </div>
+        <h3 class="prayer-title">Sexta</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+
+          <div data-include="gloria"></div>
+
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus Vos salve, Virgem</p>
+            <p>da trindade templo</p>
+            <p>alegria dos anjos</p>
+            <p>da pureza exemplo</p>
+          </div>
+
+          <div class="estrofe">
+            <p>que alegrais os tristes</p>
+            <p>com vossa clemência</p>
+            <p>horto de deleite</p>
+            <p>palma da paciência</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Sois terra bendita</p>
+            <p>e sacerdotal</p>
+            <p>sois castidade símbolo real</p>
+          </div>
+
+          <div class="estrofe">
+            <p>cidade do Altíssimo</p>
+            <p>porta oriental</p>
+            <p>sois a mesma graça</p>
+            <p>Virgem singular</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Qual lírio cheiroso</p>
+            <p>entre espinhas duras</p>
+            <p>tal sois Vós, Senhora</p>
+            <p>entre as criaturas</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Ouvi, Mãe de Deus</p>
+            <p>minha Oração</p>
+            <p>Toque em Vosso peito</p>
+            <p>os clamores meus.</p>
+          </div>
+
+          <div data-include="oracao"></div>
+        </div>
+      </article>
+
+
+
+      <!-- Nona -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕒</span>
+          <span class="hora-time">15:00</span>
+        </div>
+        <h3 class="prayer-title">Nona</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+          <div data-include="gloria"></div>
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus vos salve, cidade</p>
+            <p>de torres guarnecida</p>
+            <p>de Davi, com armas</p>
+            <p>bem fortalecida.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>De suma caridade</p>
+            <p>sempre abrasada,</p>
+            <p>do dragão a força</p>
+            <p>foi por Vós prostrada.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>A mulher tão forte!</p>
+            <p>Ó invicta Judite!</p>
+            <p>Que Vós alentastes</p>
+            <p>o sumo Davi.</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Do Egito, o curador</p>
+            <p>de Raquel nasceu</p>
+            <p>do mundo, o Salvador</p>
+            <p>Maria no-Lo deu</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Toda é formosa</p>
+            <p>minha companheira,</p>
+            <p>nela não há mácula</p>
+            <p>da culpa primeira.</p>
+          </div>
+
+          <div class="estrofe">
+              <p>Ouvi, Mãe de Deus</p>
+              <p>minha Oração.</p>
+              <p>Toque em Vosso peito</p>
+              <p>os clamores meus.</p>
+          </div>
+
+          <div data-include="oracao"></div>
+        </div>
+      </article>
+
+
+
+      <!-- Vésperas -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕕</span>
+          <span class="hora-time">18:00</span>
+        </div>
+        <h3 class="prayer-title">Vésperas</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+          <div data-include="gloria"></div>
+
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus vos salve, relógio,</p>
+            <p>que, andando atrasado</p>
+            <p>serviu de sinal</p>
+            <p>ao Verbo Encarnado</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Para que o homem suba</p>
+            <p>às sumas alturas</p>
+            <p>desce Deus dos céus</p>
+            <p>para as criaturas</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Com os raios claros</p>
+            <p>do Sol da Justiça</p>
+            <p>resplandece a Virgem</p>
+            <p>dando ao sol cobiça</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Sois lírio formoso</p>
+            <p>que cheiro respira</p>
+            <p>entre os espinhos</p>
+            <p>da serpente a ira</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Vós a quebrantais</p>
+            <p>com o vosso poder</p>
+            <p>Os cegos errados</p>
+            <p>Vós alumiais</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Fizestes nascer</p>
+            <p>Sol tão fecundo</p>
+            <p>e como com nuvens</p>
+            <p>cobristes o mundo</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Ouvi, Mãe de Deus</p>
+            <p>minha Oração</p>
+            <p>Toque em Vosso peito</p>
+            <p>os clamores meus</p>
+          </div>
+
+          <div data-include="oracao"></div>
+        </div>
+      </article>
+
+
+
+      <!-- Completas -->
+      <article class="prayer-card hora">
+        <div class="hora-badge">
+          <span class="hora-icon">🕘</span>
+          <span class="hora-time">21:00</span>
+        </div>
+        <h3 class="prayer-title">Completas</h3>
+        <div class="prayer-text">
+          <p class="versicle">Sede em meu favor, Virgem soberana, livrai-me do inimigo com o vosso valor.</p>
+          <div data-include="gloria"></div>
+
+          <h4>Hino</h4>
+          <div class="estrofe">
+            <p>Deus Vos salve, Virgem</p>
+            <p>Mãe Imaculada</p>
+            <p>Rainha de clemência</p>
+            <p>de estrelas coroada</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Vós acima dos Anjos</p>
+            <p>sois purificada</p>
+            <p>de Deus à mão direita</p>
+            <p>estais de ouro ornada</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Por Vós, Mãe de graça</p>
+            <p>mereçamos ver</p>
+            <p>Deus nas alturas</p>
+            <p>com todo prazer</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Pois sois esperança</p>
+            <p>dos pobres errantes</p>
+            <p>e seguro porto</p>
+            <p>aos navegantes</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Estrela do mar</p>
+            <p>e saúde certa</p>
+            <p>e porta que estais</p>
+            <p>para o céu aberta</p>
+          </div>
+
+          <div class="estrofe">
+            <p>É óleo derramado</p>
+            <p>Virgem, Vosso nome</p>
+            <p>e os servos vossos</p>
+            <p>vos hão sempre amado</p>
+          </div>
+
+          <div class="estrofe">
+            <p>Ouvi, Mãe de Deus</p>
+            <p>minha Oração</p>
+            <p>Toque em Vosso peito</p>
+            <p>os clamores meus</p>
+          </div>
+
+          <div data-include="oracao"></div>
+        </div>
+      </article>
+
+      
+
+      <!-- Oferecimento -->
+      <article class="prayer-card final">
+        <h3 class="prayer-title">Oferecimento</h3>
+        <div class="prayer-text">
+          <p class="emphasis">Humildes, oferecemos a Vós, Virgem pia, essas orações, porque, em nossa guia, vades Vós
+            adiante. E na agonia, Vós nos animeis, ó doce Virgem Maria. <span class="amen">Amém.</span></p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Ladainha de Nossa Senhora -->
+    <section id="ladainha" class="prayer-section">
+      <div class="section-header">
+        <div class="ornament">❧</div>
+        <h2>Ladainha de Nossa Senhora</h2>
+        <div class="ornament flipped">❧</div>
+      </div>
+
+      <article class="prayer-card ladainha-card">
+        <div class="prayer-text">
+          <div class="litany-group invocations">
+            <p><strong>Senhor, tende piedade de nós</strong></p>
+            <p><strong>Cristo, tende piedade de nós</strong></p>
+            <p><strong>Senhor, tende piedade de nós</strong></p>
+            <p><strong>Cristo, ouvi-nos</strong></p>
+            <p><strong>Cristo, atendei-nos</strong></p>
+          </div>
+
+          <div class="litany-group trinity">
+            <p>Deus Pai do céu, <span class="response">tende piedade de nós</span></p>
+            <p>Deus Filho Redentor do mundo, <span class="response">tende piedade de nós</span></p>
+            <p>Deus Espírito Santo, <span class="response">tende piedade de nós</span></p>
+            <p>Santíssima Trindade, que sois um só Deus, <span class="response">tende piedade de nós</span></p>
+          </div>
+
+          <div class="litany-group marian">
+            <h4>🌹 Invocações a Maria</h4>
+            <div class="litany-response-header">
+              <em>Resposta: <strong>Rogai por nós</strong></em>
+            </div>
+            <ul class="litany-list">
+              <li>Santa Maria</li>
+              <li>Santa Mãe de Deus</li>
+              <li>Santa Virgem das virgens</li>
+              <li>Mãe de Cristo</li>
+              <li>Mãe da Igreja</li>
+              <li>Mãe de misericórdia</li>
+              <li>Mãe da divina graça</li>
+              <li>Mãe da esperança</li>
+              <li>Mãe puríssima</li>
+              <li>Mãe castíssima</li>
+              <li>Mãe sempre virgem</li>
+              <li>Mãe imaculada</li>
+              <li>Mãe digna de amor</li>
+              <li>Mãe admirável</li>
+              <li>Mãe do bom conselho</li>
+              <li>Mãe do Criador</li>
+              <li>Mãe do Salvador</li>
+            </ul>
+          </div>
+
+          <div class="litany-group virgin">
+            <h4>💐 Virgem</h4>
+            <div class="litany-response-header">
+              <em>Resposta: <strong>Rogai por nós</strong></em>
+            </div>
+            <ul class="litany-list">
+              <li>Virgem prudentíssima</li>
+              <li>Virgem venerável</li>
+              <li>Virgem louvável</li>
+              <li>Virgem poderosa</li>
+              <li>Virgem clemente</li>
+              <li>Virgem fiel</li>
+            </ul>
+          </div>
+
+          <div class="litany-group symbols">
+            <h4>✨ Símbolos</h4>
+            <div class="litany-response-header">
+              <em>Resposta: <strong>Rogai por nós</strong></em>
+            </div>
+            <ul class="litany-list">
+              <li>Espelho de perfeição</li>
+              <li>Sede da Sabedoria</li>
+              <li>Fonte de nossa alegria</li>
+              <li>Vaso espiritual</li>
+              <li>Tabernáculo da eterna glória</li>
+              <li>Moradia consagrada a Deus</li>
+              <li>Rosa mística</li>
+              <li>Torre de Davi</li>
+              <li>Torre de marfim</li>
+              <li>Casa de ouro</li>
+              <li>Arca da aliança</li>
+              <li>Porta do céu</li>
+              <li>Estrela da manhã</li>
+            </ul>
+          </div>
+
+          <div class="litany-group intercession">
+            <h4>🙏 Intercessão</h4>
+            <div class="litany-response-header">
+              <em>Resposta: <strong>Rogai por nós</strong></em>
+            </div>
+            <ul class="litany-list">
+              <li>Saúde dos enfermos</li>
+              <li>Refúgio dos pecadores</li>
+              <li>Socorro dos migrantes</li>
+              <li>Consoladora dos aflitos</li>
+              <li>Auxílio dos cristãos</li>
+            </ul>
+          </div>
+
+          <div class="litany-group queen">
+            <h4>👑 Rainha</h4>
+            <div class="litany-response-header">
+              <em>Resposta: <strong>Rogai por nós</strong></em>
+            </div>
+            <ul class="litany-list">
+              <li>Rainha dos Anjos</li>
+              <li>Rainha dos Patriarcas</li>
+              <li>Rainha dos Profetas</li>
+              <li>Rainha dos Apóstolos</li>
+              <li>Rainha dos Mártires</li>
+              <li>Rainha dos confessores da fé</li>
+              <li>Rainha das Virgens</li>
+              <li>Rainha de todos os Santos</li>
+              <li>Rainha concebida sem pecado original</li>
+              <li>Rainha assunta ao céu</li>
+              <li>Rainha do santo Rosário</li>
+              <li>Rainha da paz</li>
+            </ul>
+          </div>
+
+          <div class="litany-group lamb">
+            <div class="lamb-section">
+              <p>Cordeiro de Deus, que tirais os pecados do mundo, <strong>perdoai-nos, Senhor.</strong></p>
+              <p>Cordeiro de Deus, que tirais os pecados do mundo, <strong>ouvi-nos, Senhor.</strong></p>
+              <p>Cordeiro de Deus, que tirais os pecados do mundo, <strong>tende piedade de nós.</strong></p>
+            </div>
+          </div>
+
+          <div class="litany-group final-prayer">
+            <p class="versicle"><strong>Rogai por nós, santa Mãe de Deus.</strong></p>
+            <p class="response-final"><strong>Para que sejamos dignos das promessas de Cristo.</strong></p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- WhatsApp Group -->
+    <section id="whatsapp" class="prayer-section">
+      <div class="section-header">
+        <div class="ornament">❧</div>
+        <h2>Grupo do WhatsApp</h2>
+        <div class="ornament flipped">❧</div>
+      </div>
+
+      <article class="prayer-card whatsapp-card">
+        <div class="whatsapp-content">
+          <div class="whatsapp-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </div>
+          <h3>Participe do nosso grupo!</h3>
+          <p>Entre no grupo do WhatsApp para receber atualizações sobre o evento, compartilhar intenções de oração e se
+            conectar com outros participantes.</p>
+
+          <a href="https://chat.whatsapp.com/EXEMPLO_LINK_AQUI" class="whatsapp-button" target="_blank"
+            rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Entrar no Grupo
+          </a>
+
+          <p class="whatsapp-note">
+            <small>Ao clicar, você será redirecionado para o WhatsApp</small>
+          </p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-ornament">✝</div>
+    <p>Salve Maria!</p>
+    <p class="footer-note">Orações para você acompanhar</p>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <template id="oracao-padrao">
+    <h4>Oração</h4>
+    <p class="oracao-destaque">
+      Santa Maria, Rainha dos céus, Mãe de Nosso Senhor Jesus Cristo, Senhora do mundo,
+      que a nenhum pecador desamparais nem desprezais; ponde, Senhora, em mim os olhos de Vossa piedade e
+      alcançai-me de Vosso amado Filho o perdão de todos os meus pecados, para que eu que agora venero com devoção
+      a Vossa santa e Imaculada Conceição, mereça na outra vida alcançar o prêmio da bem-aventurança, por mercê do
+      Vosso benditíssimo Filho, Jesus Cristo, Nosso Senhor, que, com o Pai e o Espírito Santo, vive e reina para
+      sempre.
+      <span class="amen">Amém.</span>
+    </p>
+  </template>
+
+  <template id="gloria-seja-ao-pai">
+    <p class="gloria">
+      Glória seja ao Pai, ao Filho e ao Amor também, que é um só Deus em Pessoas três, agora e para sempre, e sem fim.
+      Amém.
+    </p>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,783 @@
+:root {
+    --color-gold: #D4A574;
+    --color-gold-light: #E8C9A0;
+    --color-navy: #1a1a2e;
+    --color-navy-light: #252542;
+    --color-marian: #2C5F8E;
+    --color-cream: #FDF8F3;
+    --color-ivory: #FFFEF9;
+    --color-burgundy: #7B2D42;
+    --text-primary: #2D2A26;
+    --text-secondary: #5C574F;
+    --text-light: #8A847A;
+    --text-on-dark: #F5F0EB;
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Cormorant Garamond', Georgia, serif;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-ivory) 100%);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: -1;
+    background-image: radial-gradient(circle at 25% 25%, var(--color-gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.light-rays {
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(ellipse at center top, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
+}
+
+.header {
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+}
+
+.cross-icon {
+    font-size: 3rem;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(212, 165, 116, 0.5);
+    animation: gentle-glow 3s ease-in-out infinite;
+}
+
+@keyframes gentle-glow {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.85;
+        text-shadow: 0 0 50px rgba(212, 165, 116, 0.7);
+    }
+}
+
+.header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--color-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-on-dark);
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Bottom Navigation - Mobile First */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    z-index: 1000;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(212, 165, 116, 0.3);
+}
+
+.bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 8px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    min-height: 70px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav-item:active {
+    background: rgba(212, 165, 116, 0.1);
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--text-on-dark);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-nav-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.nav-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    opacity: 0.6;
+    letter-spacing: 0.03em;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    border-radius: 0 0 4px 4px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active state */
+.bottom-nav-item.active .nav-icon svg {
+    color: var(--color-gold);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.bottom-nav-item.active .nav-label {
+    color: var(--color-gold);
+    opacity: 1;
+}
+
+.bottom-nav-item.active .nav-indicator {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) {
+    .bottom-nav-item:hover .nav-icon svg {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    .bottom-nav-item:hover .nav-label {
+        opacity: 0.9;
+    }
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    padding-bottom: 100px;
+    /* Space for bottom nav */
+}
+
+.prayer-section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.prayer-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem 0;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-navy);
+    letter-spacing: 0.1em;
+}
+
+.ornament {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.ornament.flipped {
+    transform: scaleX(-1);
+}
+
+.prayer-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.prayer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.prayer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.prayer-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.prayer-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.prayer-text p {
+    margin-bottom: 0.3rem;
+    /* Versos da mesma estrofe bem próximos */
+    text-align: center;
+    text-indent: 0;
+    line-height: 1.4;
+}
+
+/* Estrofe - agrupa versos de uma mesma estrofe */
+.estrofe {
+    margin-bottom: 1.5rem;
+    /* Espaço entre estrofes */
+}
+
+.estrofe:last-child {
+    margin-bottom: 0;
+}
+
+.estrofe p {
+    margin-bottom: 0.2rem;
+    /* Versos bem próximos */
+}
+
+.estrofe p:last-child {
+    margin-bottom: 0;
+}
+
+.prayer-text p:last-child {
+    margin-bottom: 0;
+}
+
+.prayer-text p:first-child {
+    text-indent: 0;
+}
+
+.prayer-text h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--color-marian);
+    margin: 1.5rem 0 0.75rem;
+    text-align: center;
+}
+
+.emphasis {
+    font-weight: 600;
+    color: var(--color-navy);
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem !important;
+    /* Linhas da mesma estrofe próximas */
+}
+
+.gloria {
+    font-style: italic;
+    color: var(--color-marian);
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-gold);
+    background: rgba(44, 95, 142, 0.05);
+    text-indent: 0 !important;
+}
+
+/* Oração que se repete - destaque especial */
+.oracao-destaque {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(123, 45, 66, 0.05) 100%);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    margin-top: 1rem;
+    text-align: justify;
+    text-indent: 0 !important;
+    line-height: 1.7;
+}
+
+.oracao-destaque::before {
+    content: '🙏';
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.amen {
+    font-weight: 600;
+    color: var(--color-burgundy);
+}
+
+.versicle {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.reference {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-top: 1px dashed var(--color-gold-light);
+    padding-top: 0.75rem;
+    margin-top: 1rem;
+    text-indent: 0 !important;
+}
+
+.prayer-card.hora {
+    border-left: 4px solid var(--color-marian);
+}
+
+.hora-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: var(--color-marian);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-display);
+}
+
+.hora-icon {
+    font-size: 1.2rem;
+}
+
+.hora-time {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.prayer-card.final {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    color: var(--text-on-dark);
+}
+
+.prayer-card.final::before {
+    display: none;
+}
+
+.prayer-card.final .prayer-title {
+    color: var(--color-gold);
+}
+
+.prayer-card.final .prayer-text {
+    color: var(--text-on-dark);
+}
+
+.prayer-card.final .emphasis {
+    color: var(--text-on-dark);
+}
+
+.prayer-card.final .amen {
+    color: var(--color-gold);
+}
+
+.ladainha-card {
+    padding: 2rem;
+}
+
+.litany-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.litany-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.litany-group h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-marian);
+    margin-bottom: 0.75rem;
+}
+
+.litany-group.invocations p,
+.litany-group.trinity p {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-indent: 0;
+}
+
+.litany-group.trinity .response {
+    color: var(--color-marian);
+    font-weight: 500;
+}
+
+.litany-response-header {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(212, 165, 116, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.litany-list {
+    list-style: none;
+    columns: 1;
+}
+
+@media (min-width: 500px) {
+    .litany-list {
+        columns: 2;
+    }
+}
+
+.litany-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    break-inside: avoid;
+}
+
+.litany-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-size: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lamb-section {
+    background: rgba(123, 45, 66, 0.05);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.lamb-section p {
+    margin-bottom: 0.5rem;
+    text-indent: 0;
+}
+
+.final-prayer {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    color: var(--text-on-dark);
+}
+
+.final-prayer .versicle {
+    color: var(--color-gold);
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+.response-final {
+    margin-top: 0.75rem;
+    font-size: 1.15rem;
+}
+
+.whatsapp-card {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.whatsapp-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.whatsapp-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+    animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+@keyframes pulse-whatsapp {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.whatsapp-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+}
+
+.whatsapp-content>p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-note {
+    margin-top: 1rem;
+    color: var(--text-light);
+}
+
+.footer {
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    padding: 2.5rem 1rem;
+    padding-bottom: 100px;
+    /* Space for bottom nav */
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-ornament {
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 0.75rem;
+}
+
+.footer p {
+    font-size: 1.1rem;
+    color: var(--color-gold-light);
+    font-style: italic;
+}
+
+.footer-note {
+    font-size: 0.9rem !important;
+    color: var(--text-on-dark) !important;
+    opacity: 0.7;
+    font-style: normal !important;
+    margin-top: 0.5rem;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3);
+    z-index: 1000;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-3px);
+}
+
+.scroll-top svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-navy);
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+
+    .header {
+        padding: 2rem 0.75rem;
+    }
+
+    .nav-tabs {
+        padding: 0.75rem;
+        gap: 4px;
+    }
+
+    .nav-tab {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .main-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .prayer-card {
+        padding: 1rem;
+    }
+
+    .hora-badge {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: fit-content;
+        margin: 0 auto 1rem;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
