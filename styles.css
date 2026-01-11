@@ -123,6 +123,25 @@ body {
     opacity: 0.9;
 }
 
+.header-hero {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.header-hero img {
+    width: clamp(110px, 32vw, 180px);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    padding: 10px;
+}
+
 /* Bottom Navigation - Mobile First */
 .bottom-nav {
     position: fixed;
@@ -289,6 +308,21 @@ body {
     transform: scaleX(-1);
 }
 
+.section-hero {
+    display: flex;
+    justify-content: center;
+    margin: -1.25rem 0 2rem;
+}
+
+.section-hero img {
+    width: min(520px, 92%);
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid rgba(212, 165, 116, 0.25);
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.65);
+}
+
 .prayer-card {
     background: white;
     border-radius: var(--radius-lg);
@@ -407,11 +441,13 @@ body {
 }
 
 .oracao-destaque::before {
-    content: '🙏';
+    content: '✠';
     display: block;
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: var(--color-gold);
+    opacity: 0.9;
 }
 
 .amen {
@@ -436,30 +472,6 @@ body {
 
 .prayer-card.hora {
     border-left: 4px solid var(--color-marian);
-}
-
-.hora-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    background: var(--color-marian);
-    color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-display);
-}
-
-.hora-icon {
-    font-size: 1.2rem;
-}
-
-.hora-time {
-    font-size: 0.85rem;
-    font-weight: 600;
 }
 
 .prayer-card.final {
