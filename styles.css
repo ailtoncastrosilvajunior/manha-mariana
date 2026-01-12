@@ -116,6 +116,31 @@ body {
     text-transform: uppercase;
 }
 
+.header-title {
+    margin: 0;
+    line-height: 1.18;
+}
+
+.header-title .title-main,
+.header-title .title-sub {
+    display: block;
+}
+
+.header-title .title-main {
+    font-size: clamp(2.1rem, 6vw, 3.1rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.header-title .title-sub {
+    margin-top: 0.35rem;
+    font-size: clamp(1.1rem, 3.2vw, 1.35rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    opacity: 0.95;
+}
+
 .subtitle {
     font-size: 1.1rem;
     color: var(--text-on-dark);
@@ -323,6 +348,133 @@ body {
     background: rgba(255, 255, 255, 0.65);
 }
 
+/* Terço Mariano */
+.terco-card {
+    overflow: hidden;
+}
+
+.terco-intro {
+    margin: 0 0 1rem;
+    text-indent: 0 !important;
+}
+
+.marian-quote {
+    margin: 0 0 1.15rem;
+    padding: 1.1rem 1.1rem 0.95rem;
+    border-radius: 18px;
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    background: radial-gradient(circle at top, rgba(212, 165, 116, 0.12), rgba(44, 95, 142, 0.04));
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.marian-quote::before {
+    content: '❝';
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 2.2rem;
+    color: rgba(212, 165, 116, 0.55);
+    line-height: 1;
+}
+
+.marian-quote blockquote {
+    margin: 0;
+    padding: 0.25rem 0.25rem 0.25rem 1.15rem;
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--color-navy);
+    font-style: italic;
+    text-indent: 0 !important;
+}
+
+.marian-quote figcaption {
+    margin-top: 0.6rem;
+    padding-left: 1.15rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--color-gold);
+}
+
+.mysteries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+}
+
+@media (min-width: 680px) {
+    .mysteries-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.mystery {
+    border: 1px solid rgba(212, 165, 116, 0.25);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(44, 95, 142, 0.05) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.mystery[open] {
+    border-color: rgba(212, 165, 116, 0.45);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.1);
+}
+
+.mystery summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    color: var(--color-navy);
+    user-select: none;
+}
+
+.mystery summary::-webkit-details-marker {
+    display: none;
+}
+
+.mystery-title {
+    font-weight: 600;
+}
+
+.mystery-day {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    color: var(--color-gold-dark, var(--color-gold));
+    background: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+}
+
+.mystery-list {
+    margin: 0;
+    padding: 0 1.15rem 1.05rem 2.25rem;
+    color: var(--text-secondary);
+}
+
+.mystery-list li {
+    margin: 0.45rem 0;
+    line-height: 1.55;
+}
+
+.mystery:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.09);
+}
+
 .prayer-card {
     background: white;
     border-radius: var(--radius-lg);
@@ -520,6 +672,50 @@ body {
     font-size: 1.1rem;
     color: var(--color-marian);
     margin-bottom: 0.75rem;
+}
+
+/* Ladainha: substituir emojis por selos/ornamentos consistentes */
+.ladainha-card .litany-group h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.ladainha-card .litany-group h4::before {
+    content: '❧';
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    background: radial-gradient(circle at top, rgba(212, 165, 116, 0.16), rgba(44, 95, 142, 0.04));
+    color: var(--color-gold);
+    font-size: 1.05rem;
+    line-height: 1;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.litany-group.marian h4::before {
+    content: '❦';
+}
+
+.litany-group.virgin h4::before {
+    content: '✿';
+}
+
+.litany-group.symbols h4::before {
+    content: '✦';
+}
+
+.litany-group.intercession h4::before {
+    content: '✠';
+}
+
+.litany-group.queen h4::before {
+    content: '♕';
 }
 
 .litany-group.invocations p,
@@ -734,7 +930,8 @@ body {
 
 .scroll-top {
     position: fixed;
-    bottom: 30px;
+    /* keep clear of the fixed bottom navigation */
+    bottom: calc(90px + env(safe-area-inset-bottom, 0px));
     right: 30px;
     width: 50px;
     height: 50px;
@@ -749,7 +946,8 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3);
-    z-index: 1000;
+    /* keep below the bottom nav (z-index: 1000) */
+    z-index: 950;
 }
 
 .scroll-top.visible {
@@ -805,7 +1003,7 @@ body {
     }
 
     .scroll-top {
-        bottom: 20px;
+        bottom: calc(82px + env(safe-area-inset-bottom, 0px));
         right: 20px;
         width: 45px;
         height: 45px;
