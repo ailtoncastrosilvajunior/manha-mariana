@@ -603,8 +603,9 @@ body {
 
 /* Estrofe - agrupa versos de uma mesma estrofe */
 .estrofe {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.2rem;
     /* Espaço entre estrofes */
+    font-size: 1.3rem;
 }
 
 .estrofe:last-child {
