@@ -546,6 +546,22 @@ body {
     line-height: 1.55;
 }
 
+.mystery-list p {
+    text-indent: 0 !important;
+    text-align: justify;
+}
+
+.mystery-list ul {
+    margin-top: 0.75rem;
+    padding-left: 1.2rem;
+}
+
+.mystery-list ul li {
+    margin: 0.65rem 0;
+    line-height: 1.65;
+    text-align: justify;
+}
+
 .mystery:hover {
     transform: translateY(-1px);
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.09);
