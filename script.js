@@ -68,7 +68,56 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 		}
 
-		fillTemplate('oracao-padrao', '[data-include="oracao"]');
-		fillTemplate('gloria-seja-ao-pai', '[data-include="gloria"]');
+	fillTemplate('oracao-padrao', '[data-include="oracao"]');
+	fillTemplate('gloria-seja-ao-pai', '[data-include="gloria"]');
+
+    // Font Size Control
+    const fontSizes = {
+        small: 14,
+        normal: 16,
+        large: 18,
+        xlarge: 20
+    };
+
+    let currentSizeIndex = 1; // Start at normal (16px)
+    const sizeKeys = Object.keys(fontSizes);
+
+    // Load saved font size preference
+    const savedSize = localStorage.getItem('fontSize');
+    if (savedSize) {
+        const savedIndex = sizeKeys.indexOf(savedSize);
+        if (savedIndex !== -1) {
+            currentSizeIndex = savedIndex;
+            applyFontSize(savedSize);
+        }
+    }
+
+    function applyFontSize(sizeKey) {
+        const size = fontSizes[sizeKey];
+        document.documentElement.style.fontSize = size + 'px';
+        localStorage.setItem('fontSize', sizeKey);
+    }
+
+    // Decrease font size
+    document.getElementById('decreaseFont').addEventListener('click', () => {
+        if (currentSizeIndex > 0) {
+            currentSizeIndex--;
+            applyFontSize(sizeKeys[currentSizeIndex]);
+        }
+    });
+
+    // Reset to normal font size
+    document.getElementById('resetFont').addEventListener('click', () => {
+        currentSizeIndex = 1; // normal
+        applyFontSize(sizeKeys[currentSizeIndex]);
+    });
+
+    // Increase font size
+    document.getElementById('increaseFont').addEventListener('click', () => {
+        if (currentSizeIndex < sizeKeys.length - 1) {
+            currentSizeIndex++;
+            applyFontSize(sizeKeys[currentSizeIndex]);
+        }
+    });
 
 });
