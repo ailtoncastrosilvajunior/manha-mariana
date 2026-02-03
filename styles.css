@@ -329,14 +329,8 @@ body {
     text-indent: 0 !important;
 }
 
-.home-list li {
-    font-size: 1.5rem;
-}
-
-.checklist li {
-    font-size: 1.5rem;
-}
-
+.home-list li,
+.checklist,
 .home-ol li {
     margin: 0.45rem 0;
     line-height: 1.6;
@@ -529,7 +523,6 @@ body {
 
 .mystery-title {
     font-weight: 600;
-    font-size: 1.5rem;
 }
 
 .mystery-day {
@@ -548,7 +541,6 @@ body {
     margin: 0;
     padding: 0 1.15rem 1.05rem 2.25rem;
     color: var(--text-secondary);
-    font-size: 1.5rem;
 }
 
 .mystery-list li {
@@ -681,7 +673,6 @@ body {
     border-left: 3px solid var(--color-gold);
     background: rgba(44, 95, 142, 0.05);
     text-indent: 0 !important;
-    font-size: 1.5rem;
 }
 
 /* Oração que se repete - destaque especial */
@@ -692,7 +683,6 @@ body {
     border: 1px solid rgba(212, 165, 116, 0.3);
     margin-top: 1rem;
     text-align: justify;
-    font-size: 1.5rem;
     text-indent: 0 !important;
     line-height: 1.7;
 }
@@ -715,7 +705,6 @@ body {
 .versicle {
     font-style: italic;
     color: var(--text-secondary);
-    font-size: 1.5rem;
 }
 
 .reference {
