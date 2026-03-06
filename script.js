@@ -35,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Índice Início — scroll suave ao clicar nos cards
+    document.querySelectorAll('.inicio-index-card').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.dataset.scrollTo;
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
     // Add subtle animation to prayer cards on scroll
     const observerOptions = {
         threshold: 0.1,
@@ -68,8 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 		}
 
-	fillTemplate('oracao-padrao', '[data-include="oracao"]');
+    fillTemplate('oracao-padrao', '[data-include="oracao"]');
 	fillTemplate('gloria-seja-ao-pai', '[data-include="gloria"]');
+
+    // Liturgia das Horas — link definido em config.js (atualizar mensalmente)
+    const liturgiaLink = document.getElementById('liturgiaLink');
+    if (liturgiaLink && typeof CONFIG !== 'undefined' && CONFIG.LITURGIA_URL) {
+        liturgiaLink.href = CONFIG.LITURGIA_URL;
+    }
 
     // Font Size Control
     const fontSizes = {

@@ -141,7 +141,26 @@
         <div class="ornament flipped">❧</div>
       </div>
 
-      <article class="prayer-card home-card">
+      <!-- Índice de navegação -->
+      <div class="inicio-index">
+        <button type="button" class="inicio-index-card" data-scroll-to="inicio-devocao" aria-label="Ir para Devoção dos Cinco Primeiros Sábados">
+          <span class="inicio-index-icon">✝</span>
+          <span class="inicio-index-title">Devoção</span>
+          <span class="inicio-index-desc">Origem, ofensas e como viver</span>
+        </button>
+        <button type="button" class="inicio-index-card" data-scroll-to="inicio-liturgia" aria-label="Ir para Liturgia das Horas">
+          <span class="inicio-index-icon">📿</span>
+          <span class="inicio-index-title">Liturgia das Horas</span>
+          <span class="inicio-index-desc">Laudes, Vésperas e Completas</span>
+        </button>
+        <button type="button" class="inicio-index-card" data-scroll-to="inicio-exame" aria-label="Ir para Exame de Consciência">
+          <span class="inicio-index-icon">✠</span>
+          <span class="inicio-index-title">Exame de Consciência</span>
+          <span class="inicio-index-desc">Preparação para a confissão</span>
+        </button>
+      </div>
+
+      <article id="inicio-devocao" class="prayer-card home-card">
         <div class="prayer-text">
           <p class="home-lead">
             A devoção dos <strong>Cinco Primeiros Sábados</strong> foi revelada por Nossa Senhora à Irmã Lúcia em
@@ -214,8 +233,18 @@
         </article>
       </div>
 
+      <!-- Liturgia das Horas - Sábado (atualizar link em config.js a cada mês) -->
+      <article id="inicio-liturgia" class="prayer-card home-card liturgia-card">
+        <a id="liturgiaLink" href="#" target="_blank" rel="noopener noreferrer" class="liturgia-link">
+          <span class="liturgia-icon">📿</span>
+          <h3 class="prayer-title">Liturgia das Horas — Sábado</h3>
+          <p class="liturgia-desc">Laudes, Vésperas e Completas do sábado. Conteúdo da Paulus Editora.</p>
+          <span class="liturgia-cta">Abrir no site da Paulus →</span>
+        </a>
+      </article>
+
       <!-- Exame de Consciência -->
-      <article class="prayer-card home-card" style="margin-top: 2rem;">
+      <article id="inicio-exame" class="prayer-card home-card" style="margin-top: 2rem;">
         <h3 class="prayer-title">Vivendo o Sacramento do Perdão</h3>
         <div class="prayer-text">
           <p class="home-lead">
@@ -1177,6 +1206,7 @@ Que a sua ira se aparte de nós.</p>
     </p>
   </template>
 
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 
